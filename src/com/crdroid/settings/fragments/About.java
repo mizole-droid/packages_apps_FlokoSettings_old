@@ -77,7 +77,7 @@ public class About extends SettingsPreferenceFragment {
         if (preference == mDonate) {
             launchUrl("https://github.com/sponsors/lindwurm");
         } else if (preference == mSourceUrl) {
-            launchUrl("https://github.com/FlokoROM");
+            launchUrl("https://github.com/FloxoRom");
         } else if (preference == mTelegramUrl) {
             launchUrl("https://floko.maud.io");
         } else if (preference == mShare) {

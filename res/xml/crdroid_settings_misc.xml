@@ -56,12 +56,12 @@
         android:defaultValue="false" />
 
     <!-- Sensor block per package -->
-    <Preference
-        android:key="sensor_block_settings"
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="sensor_block"
         android:icon="@drawable/ic_remote"
         android:title="@string/sensor_block_title"
         android:summary="@string/sensor_block_summary"
-        android:fragment="com.crdroid.settings.fragments.misc.SensorBlock"/>
+        android:defaultValue="false" />
 
     <!-- Pocket Judge -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference

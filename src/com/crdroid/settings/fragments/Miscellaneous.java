@@ -20,13 +20,11 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -43,8 +41,7 @@ import java.util.ArrayList;
 import lineageos.providers.LineageSettings;
 
 @SearchIndexable
-public class Miscellaneous extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class Miscellaneous extends SettingsPreferenceFragment {
 
     public static final String TAG = "Miscellaneous";
 
@@ -77,20 +74,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_pocketModeSupported);
         if (!mPocketJudgeSupported)
             prefScreen.removePreference(mPocketJudge);
-
-        mPhotosSpoof = (SwitchPreference) prefScreen.findPreference(KEY_PHOTOS_SPOOF);
-        mPhotosSpoof.setChecked(SystemProperties.getBoolean(SYS_PHOTOS_SPOOF, true));
-        mPhotosSpoof.setOnPreferenceChangeListener(this);
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mPhotosSpoof) {
-            boolean value = (Boolean) newValue;
-            SystemProperties.set(SYS_PHOTOS_SPOOF, value ? "true" : "false");
-            return true;
-        }
-        return false;
     }
 
     public static void reset(Context mContext) {
@@ -101,7 +84,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.AUTO_BRIGHTNESS_ONE_SHOT, 0, UserHandle.USER_CURRENT);
-        SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
         SensorBlock.reset(mContext);
         SmartCharging.reset(mContext);
     }

@@ -47,12 +47,9 @@ public class Miscellaneous extends SettingsPreferenceFragment {
 
     private static final String SMART_CHARGING = "smart_charging";
     private static final String POCKET_JUDGE = "pocket_judge";
-    private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
-    private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
 
     private Preference mSmartCharging;
     private Preference mPocketJudge;
-    private SwitchPreference mPhotosSpoof;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

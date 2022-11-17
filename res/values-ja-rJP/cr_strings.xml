@@ -973,4 +973,7 @@
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">クリップボードオーバーレイを表示</string>
     <string name="show_clipboard_overlay_summary">クリップボードに何かがコピーされた時に、画面の左下にコピー内容をオーバーレイを表示します</string>
+    <string name="sensor_block_app_picker_title">特定のアプリ使用時にセンサーをブロック</string>
+    <string name="add_sensor_block_package_title">アプリを追加</string>
+    <string name="add_sensor_block_package_summary">大きな動作や加速度センサーはこのアプリの為にブロックされます。</string>
 </resources>
